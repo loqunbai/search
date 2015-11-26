@@ -36,7 +36,7 @@ public class Search {
         IndexSearcher searcher = new IndexSearcher(SearchFactory.getReader());
 
 //        SortField fieldSort = new SortField(textType, SortField.Type.SCORE);
-        SortField dateSort  = new SortField("date", SortField.Type.INT, true);
+        SortField dateSort  = new SortField("date", SortField.Type.INT, false);
 
         Sort sort = new Sort(dateSort);
         // Search...
@@ -88,7 +88,7 @@ public class Search {
         System.out.println(queryStr + " search start...");
 
         SortField fieldSort = new SortField(textType, SortField.Type.SCORE);
-        SortField dateSort  = new SortField("date", SortField.Type.INT, true);
+        SortField dateSort  = new SortField("date", SortField.Type.INT, false);
 
         Sort sort = new Sort(fieldSort, dateSort);
 
